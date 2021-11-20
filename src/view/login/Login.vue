@@ -48,26 +48,7 @@ export default {
         password: "123456",
       },
       //表单验证规则
-      loginFormRules: {
-        username: [
-          { required: true, message: "请输入用户名", trigger: "blur" },
-          {
-            min: 5,
-            max: 10,
-            message: "长度在 5 到 10 个字符",
-            trigger: "blur",
-          },
-        ],
-        password: [
-          { required: true, message: "请输入密码", trigger: "blur" },
-          {
-            min: 6,
-            max: 12,
-            message: "长度在 6 到 12 个字符",
-            trigger: "blur",
-          },
-        ],
-      },
+      loginFormRules: {},
     };
   },
   methods: {
@@ -81,12 +62,12 @@ export default {
         if (!valid) {
           return console.log("输入不合法");
         }
-        const {data:res} = await this.$http.post("login", this.loginForm);
+        const { data: res } = await this.$http.post("login", this.loginForm);
         // console.log(res);
-        if(res.meta.status !== 200) return this.$message.error('登录失败');
-        this.$message.success('登陆成功');
-        window.sessionStorage.setItem('token',res.data.token);
-        this.$router.push('/home')
+        if (res.meta.status !== 200) return this.$message.error("登录失败");
+        this.$message.success("登陆成功");
+        window.sessionStorage.setItem("token", res.data.token);
+        this.$router.push("/home");
       });
     },
   },

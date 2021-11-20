@@ -22,6 +22,7 @@ import {
     Tooltip,
     Pagination,
     Dialog,
+    MessageBox,
 
     Message,
 } from 'element-ui'
@@ -52,6 +53,8 @@ const element = {
         Vue.use(Dialog);
 
         Vue.prototype.$message = Message;
+        Vue.prototype.$confirm = MessageBox.confirm;
+
     }
 }
 export default element
