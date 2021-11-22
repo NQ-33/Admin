@@ -92,7 +92,7 @@ export default {
     // 保存当前点击的二级菜单
     saveNavState(activePath) {
       window.sessionStorage.setItem("activePath", activePath);
-      this.activePath = activePath
+      this.activePath = activePath;
     },
     // 请求菜单栏数据
     async getMenuList() {
