@@ -27,7 +27,7 @@
         :show-row-hover="false"
         :expand-type="false"
       >
-        <template slot="isok" slot-scope="scope">
+        <template slot="isOk" slot-scope="scope">
           <i
             class="el-icon-success"
             v-if="scope.row.cat_deleted === false"
@@ -61,9 +61,9 @@
       <el-pagination
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
-        :current-page="querInfo.pagenum"
+        :current-page="queryInfo.pagenum"
         :page-sizes="[5, 10, 15, 20]"
-        :page-size="querInfo.pagesize"
+        :page-size="queryInfo.pagesize"
         layout="total, sizes, prev, pager, next, jumper"
         :total="total"
       >
@@ -95,7 +95,7 @@
               label: 'cat_name',
               value: 'cat_id',
               children: 'children',
-              checkStrictly: 'ture',
+              checkStrictly: 'true',
             }"
             @change="parentCateChange"
             clearable
@@ -116,7 +116,7 @@ export default {
   name: "Cate",
   data() {
     return {
-      querInfo: {
+      queryInfo: {
         type: 3,
         pagenum: 1,
         pagesize: 5,
@@ -134,7 +134,7 @@ export default {
         {
           label: "是否有效",
           type: "template",
-          template: "isok",
+          template: "isOk",
         },
         {
           label: "排序",
@@ -169,13 +169,13 @@ export default {
     };
   },
   created() {
-    this.getGateList();
+    this.getCateList();
   },
   methods: {
     //   获取商品分类数据
-    async getGateList() {
+    async getCateList() {
       const { data: res } = await this.$http.get("categories", {
-        params: this.querInfo,
+        params: this.queryInfo,
       });
       if (res.meta.status !== 200) {
         return this.$message.error("获取商品分类失败");
@@ -185,13 +185,13 @@ export default {
     },
     // 监听pagesize改变
     handleSizeChange(newSize) {
-      this.querInfo.pagesize = newSize;
-      this.getGateList();
+      this.queryInfo.pagesize = newSize;
+      this.getCateList();
     },
-    // 监听pagenum 改变
+    // 监听pageNum 改变
     handleCurrentChange(newPage) {
-      this.querInfo.pagenum = newPage;
-      this.getGateList();
+      this.queryInfo.pagenum = newPage;
+      this.getCateList();
     },
     // 添加分类按钮
     showAddCateDialogVisible() {
@@ -242,7 +242,7 @@ export default {
         if (res.meta.status !== 201 ) {
           return this.$message.error("添加商品分类失败");
         }
-        this.getGateList();
+        this.getCateList();
         this.$message.success('添加商品分类成功')
         this.addCateDialogVisible = false;
       });

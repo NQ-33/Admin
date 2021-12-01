@@ -8,6 +8,9 @@ import Rights from '@/view/home/childComps/power/Rights.vue';
 import Roles from '../view/home/childComps/power/Roles.vue';
 import Cate from '@/view/home/childComps/goods/Cate.vue'
 import params from '@/view/home/childComps/goods/params.vue';
+import GoodsList from '@/view/home/childComps/goods/List.vue'
+import Add from '@/view/home/childComps/goods/Add.vue'
+
 
 Vue.use(VueRouter)
 
@@ -41,6 +44,12 @@ const routes = [{
         }, {
             path: '/params',
             component: params,
+        }, {
+            path: '/goods',
+            component: GoodsList,
+        }, {
+            path: '/goods/add',
+            component: Add,
         }]
     }
 ]
