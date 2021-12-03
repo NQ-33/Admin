@@ -1,35 +1,13 @@
 <template>
   <div>
-    <div class="gif-box">
-      <img src="@/assets/images/yz1.gif" alt="" />
-      <img src="@/assets/images/yz2.gif" alt="" />
-      <img src="@/assets/images/yz3.gif" alt="" />
-      <img src="@/assets/images/yz4.gif" alt="" />
-      <img src="@/assets/images/yz5.gif" alt="" />
-      <img src="@/assets/images/yz6.gif" alt="" />
-      <img src="@/assets/images/yz7.gif" alt="" />
-      <img src="@/assets/images/yz8.gif" alt="" />
-    </div>
-    <div class="gif-box">
-      <img src="@/assets/images/yz4.gif" alt="" />
-      <img src="@/assets/images/yz5.gif" alt="" />
-      <img src="@/assets/images/yz6.gif" alt="" />
-      <img src="@/assets/images/yz1.gif" alt="" />
-      <img src="@/assets/images/yz2.gif" alt="" />
-      <img src="@/assets/images/yz3.gif" alt="" />
-      <img src="@/assets/images/yz7.gif" alt="" />
-      <img src="@/assets/images/yz8.gif" alt="" />
-    </div>
-    <div class="gif-box">
-      <img src="@/assets/images/yz7.gif" alt="" />
-      <img src="@/assets/images/yz8.gif" alt="" />
-      <img src="@/assets/images/yz9.gif" alt="" />
-      <img src="@/assets/images/yz4.gif" alt="" />
-      <img src="@/assets/images/yz5.gif" alt="" />
-      <img src="@/assets/images/yz6.gif" alt="" />
-      <img src="@/assets/images/yz1.gif" alt="" />
-      <img src="@/assets/images/yz2.gif" alt="" />
-    </div>
+    <!-- 面包屑 -->
+    <el-breadcrumb separator="/">
+      <el-breadcrumb-item>首页</el-breadcrumb-item>
+    </el-breadcrumb>
+    <!-- 卡片区域 -->
+    <el-card>
+      <p>welcome</p>
+    </el-card>
   </div>
 </template>
 
@@ -40,14 +18,41 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.gif-box {
-  display: flex;
-  overflow: hidden;
-  margin-bottom: 20px;
-  margin-right: 5px;
+.el-card {
+  height: 580px;
 }
-img {
-    flex: 1;
-    border-bottom:2px solid #ccc ;
+p {
+  line-height: 240px;
+  font-family: "Audiowide";
+  text-align: center;
+  color: #4169E1;
+  font-size: 7em;
+  -webkit-transition: all 1.5s ease;
+  transition: all 1.5s ease;
+}
+p:hover {
+  color: #87CEEB	;
+  -webkit-animation: Glow 1.5s ease infinite alternate;
+  animation: Glow 1.5s ease infinite alternate;
+}
+@-webkit-keyframes Glow {
+  from {
+    text-shadow: 0 0 10px #87CEEB	, 0 0 20px #87CEEB	, 0 0 30px #87CEEB	, 0 0 40px #4169E1,
+      0 0 70px #4169E1, 0 0 80px #4169E1, 0 0 100px #4169E1, 0 0 150px #4169E1;
+  }
+  to {
+    text-shadow: 0 0 5px #87CEEB	, 0 0 10px #87CEEB	, 0 0 15px #87CEEB	, 0 0 20px #4169E1,
+      0 0 35px #4169E1, 0 0 40px #4169E1, 0 0 50px #4169E1, 0 0 75px #4169E1;
+  }
+}
+@keyframes Glow {
+  from {
+    text-shadow: 0 0 10px #87CEEB	, 0 0 20px #87CEEB	, 0 0 30px #87CEEB	, 0 0 40px #4169E1,
+      0 0 70px #4169E1, 0 0 80px #4169E1, 0 0 100px #4169E1, 0 0 150px #4169E1;
+  }
+  to {
+    text-shadow: 0 0 5px #87CEEB	, 0 0 10px #87CEEB	, 0 0 15px #87CEEB	, 0 0 20px #4169E1,
+      0 0 35px #4169E1, 0 0 40px #4169E1, 0 0 50px #4169E1, 0 0 75px #4169E1;
+  }
 }
 </style>

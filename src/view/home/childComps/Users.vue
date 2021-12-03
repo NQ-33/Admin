@@ -188,7 +188,6 @@
         <p>当前用户名称：{{ userInfo.username }}</p>
         <p>当前用户角色：{{ userInfo.role_name }}</p>
         <p>
-          {{ userInfo.role_name }}
           <el-select v-model="selectedroleId" placeholder="请选择">
             <el-option
               v-for="item in rolesList"
@@ -202,9 +201,7 @@
       </div>
       <span slot="footer" class="dialog-footer">
         <el-button @click="setRoleDialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="saveRoleInfo"
-          >确 定</el-button
-        >
+        <el-button type="primary" @click="saveRoleInfo">确 定</el-button>
       </span>
     </el-dialog>
   </div>
@@ -238,10 +235,10 @@ export default {
       dialogVisible: false,
       // 添加用户对话框中表单数据
       addForm: {
-        username: "111111",
-        password: "111111",
-        email: "11111@qq.com",
-        mobile: "18911249336",
+        username: "",
+        password: "",
+        email: "",
+        mobile: "",
       },
       // 添加用户对话框表单规则
       addFormRules: {
@@ -469,10 +466,10 @@ export default {
       this.setRoleDialogVisible = false;
     },
     // 监听分配角色对话框关闭
-    setRoleDialogClosed(){
-      this.selectedroleId=''
-      this.userInfo={}
-    }
+    setRoleDialogClosed() {
+      this.selectedroleId = "";
+      this.userInfo = {};
+    },
   },
 };
 </script>

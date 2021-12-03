@@ -309,7 +309,7 @@ export default {
         item.inputVisible = false;
         item.inputValue = "";
       });
-      console.log(res);
+      // console.log(res);
 
       if (this.activeName === "many") {
         this.manyTableData = res.data;

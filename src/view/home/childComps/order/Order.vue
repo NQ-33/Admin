@@ -10,8 +10,17 @@
     <el-card>
       <el-row :gutter="20">
         <el-col :span="8">
-          <el-input placeholder="请输入内容">
-            <el-button slot="append" icon="el-icon-search"></el-button>
+          <el-input
+            placeholder="请输入内容"
+            clearable
+            v-model="queryInfo.query"
+            @clear="getOrderList"
+          >
+            <el-button
+              slot="append"
+              icon="el-icon-search"
+              @click="getOrderList"
+            ></el-button>
           </el-input>
         </el-col>
       </el-row>
@@ -184,7 +193,7 @@ export default {
     // 修改地址
     showBox() {
       this.addressVisible = true;
-      console.log(this.cityData);
+      // console.log(this.cityData);
     },
     // 地址对话框关闭
     addressClosed() {

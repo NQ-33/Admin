@@ -38,6 +38,7 @@ import {
     Upload,
     Timeline,
     TimelineItem,
+    Calendar,
 
     Message,
 } from 'element-ui'
@@ -81,6 +82,8 @@ const element = {
         Vue.use(Upload);
         Vue.use(Timeline);
         Vue.use(TimelineItem);
+        Vue.use(Calendar);
+
 
 
         Vue.prototype.$message = Message;
