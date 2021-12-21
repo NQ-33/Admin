@@ -25,7 +25,7 @@ import "nprogress/nprogress.css";
 Vue.use(element);
 Vue.config.productionTip = false;
 
-axios.defaults.baseURL = "http://127.0.0.1:8888/api/private/v1/";
+axios.defaults.baseURL = "http://139.9.202.95:8888/api/private/v1/";
 // request时开启进度条
 axios.interceptors.request.use((config) => {
     // console.log(config);
